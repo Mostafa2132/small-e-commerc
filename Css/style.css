@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navbar-light .navbar-toggler {
+    color: #fe4c50;
+    border-color: rgba(0, 0, 0, .1);
+}
+.navbar-light .navbar-toggler-icon{
+    color: #000 !important;
+}
+header {
+  height: 75vh;
+}
+header .row{
+    top: -1%;
+}
+.nav-item a.active{
+    color: black !important;
+}
+.nav-item a{
+    color: rgba(17, 6, 6, 0.595) !important;
+    font-weight: 500;
+}
+
+.inner h1 {
+    font-size: 75px;
+}
+
+.item {
+  height: 200px;
+    border: 1px solid #000;
+    transition: all .5s;
+    cursor: pointer;
+}
+.item:hover{
+    background-color: #fe4c50;
+    color: white;
+}
+.Categories{
+    width: 90% !important;
+}

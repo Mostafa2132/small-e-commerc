@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./Css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-white fixed-top">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand text-danger fs-2 ms-5 fw-bold" href="index.html">Shoptopia </a>
+            <button class="navbar-toggler bg-danger  " type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon bg-danger">____</span>
+            </button>
+            <div class="collapse navbar-collapse me-5 " id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item ">
+                        <a class="nav-link fs-5 mx-2 text-black active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5 mx-2" href="anyProducts.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5 mx-2" href="addProduct.html">Add Product</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" id="name" placeholder="name@example.com">
+                        <label for="name">product name</label>
+                    </div>
+
+                </div>
+                <div class="col-md-12">
+                    <div class="form-floating mb-4">
+                        <input type="number" class="form-control form-control-lg " id="price"
+                            placeholder="name@example.com">
+                        <label for="price">product Price</label>
+                    </div>
+
+                </div>
+                <div class="col-md-12">
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" id="cat" placeholder="name@example.com">
+                        <label for="cat">product Cat</label>
+                    </div>
+
+                </div>
+                <div class="col-md-12">
+                    <div class="form-floating mb-4">
+                        <textarea class="form-control" id="des" placeholder="name@example.com"></textarea>
+                        <label for="des">product Descraption</label>
+                    </div>
+                </div>
+            </div>
+            <p class="text-danger fs-5 text-center d-none msg fw-bold">All inputs are required</p>
+            <button type="button" id="btn" class="btn btn-success d-block ms-auto px-4 py-2">Add Product</button>
+        </div>
+    </section>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./Js/bootstrap.bundle.min.js"></script>
+    <script src="./Js/index.js"></script>
+</body>
+
+</html>
