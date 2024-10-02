@@ -4,7 +4,7 @@ let des = document.querySelector("#des");
 let cat = document.querySelector("#cat");
 let btn = document.querySelector("#btn");
 
-// 
+//
 async function GetAllCategories() {
   try {
     let res = await fetch("https://dummyjson.com/products/category-list");
@@ -30,10 +30,12 @@ function DisplayAllCategories(categoryList) {
   }
   let allCatigre = document.querySelectorAll(".category");
   for (let i = 0; i < allCatigre.length; i++) {
-    allCatigre[i].addEventListener("click", () => {
-      localStorage.setItem("category", allCatigre[i].innerText);
-      location.href = "/categoryProducts.html";
-    });
+    if (location.pathname.includes("/index.html")) {
+      allCatigre[i].addEventListener("click", () => {
+        localStorage.setItem("category", allCatigre[i].innerText);
+        location.href = "/categoryProducts.html";
+      });
+    }
   }
 }
 
@@ -87,12 +89,12 @@ function DisplayCatPro(products) {
   let x = document.querySelectorAll(".product");
 
   for (let i = 0; i < x.length; i++) {
-    x[i].addEventListener("click", () => {
-      if(location.pathname.includes("/categoryProducts.html")){
+    if (location.pathname.includes("/categoryProducts.html")) {
+      x[i].addEventListener("click", () => {
         localStorage.setItem("proId", x[i].getAttribute("id"));
         location.href = "/productDet.html";
-      }
-    });
+      });
+    }
   }
 }
 
@@ -111,9 +113,8 @@ allProducts();
 
 async function showSelectedProudct() {
   try {
-    let proId = localStorage.getItem("proId")
-    let res = await fetch(`https://dummyjson.com/products/${proId}`
-    );
+    let proId = localStorage.getItem("proId");
+    let res = await fetch(`https://dummyjson.com/products/${proId}`);
     let item = await res.json();
     DisplayselectedPro(item);
   } catch (error) {
@@ -171,10 +172,11 @@ async function addProduct() {
       },
     }).showToast();
     clear();
-
-    setTimeout(() => {
-      location.pathname = "/index.html";
-    }, 3000);
+    if (location.pathname.includes("/addProduct.html")) {
+      setTimeout(() => {
+        location.pathname = "/index.html";
+      }, 3000);
+    }
   }
 }
 
