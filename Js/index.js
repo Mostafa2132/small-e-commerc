@@ -88,8 +88,10 @@ function DisplayCatPro(products) {
 
   for (let i = 0; i < x.length; i++) {
     x[i].addEventListener("click", () => {
-      localStorage.setItem("proId", +x[i].getAttribute("id"));
-      location.href = "/productDet.html";
+      localStorage.setItem("proId", x[i].getAttribute("id"));
+        if(location.href.includes("/productDet.html")){
+          location.href == "/productDet.html";
+        }
     });
   }
 }
@@ -162,7 +164,6 @@ async function addProduct() {
     });
     Toastify({
       text: "Product added successfully",
-
       duration: 3000,
       gravity: "bottom",
       style: {
