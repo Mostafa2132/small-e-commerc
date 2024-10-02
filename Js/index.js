@@ -32,7 +32,7 @@ function DisplayAllCategories(categoryList) {
   for (let i = 0; i < allCatigre.length; i++) {
     allCatigre[i].addEventListener("click", () => {
       localStorage.setItem("category", allCatigre[i].innerText);
-      location.href = "/categoryProducts.html";
+      location.href = "../categoryProducts.html";
     });
   }
 }
@@ -88,10 +88,8 @@ function DisplayCatPro(products) {
 
   for (let i = 0; i < x.length; i++) {
     x[i].addEventListener("click", () => {
-      localStorage.setItem("proId", x[i].getAttribute("id"));
-        if(location.href.includes("/productDet.html")){
-          location.href == "/productDet.html";
-        }
+      localStorage.setItem("proId", +x[i].getAttribute("id"));
+      location.href = "/productDet.html";
     });
   }
 }
@@ -111,11 +109,10 @@ allProducts();
 
 async function showSelectedProudct() {
   try {
-    let res = await fetch(
-      `https://dummyjson.com/products/${localStorage.getItem("proId")}`
+    let proId = localStorage.getItem("proId")
+    let res = await fetch(`https://dummyjson.com/products/${proId}`
     );
     let item = await res.json();
-
     DisplayselectedPro(item);
   } catch (error) {
     console.log(error);
@@ -164,6 +161,7 @@ async function addProduct() {
     });
     Toastify({
       text: "Product added successfully",
+
       duration: 3000,
       gravity: "bottom",
       style: {
