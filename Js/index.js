@@ -32,7 +32,7 @@ function DisplayAllCategories(categoryList) {
   for (let i = 0; i < allCatigre.length; i++) {
     allCatigre[i].addEventListener("click", () => {
       localStorage.setItem("category", allCatigre[i].innerText);
-      location.href = "../categoryProducts.html";
+      location.href = "/categoryProducts.html";
     });
   }
 }
@@ -169,6 +169,7 @@ async function addProduct() {
       },
     }).showToast();
     clear();
+    
     setTimeout(() => {
       location.pathname = "/index.html";
     }, 3000);
