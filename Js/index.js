@@ -88,8 +88,10 @@ function DisplayCatPro(products) {
 
   for (let i = 0; i < x.length; i++) {
     x[i].addEventListener("click", () => {
-      localStorage.setItem("proId", +x[i].getAttribute("id"));
-      location.href = "/productDet.html";
+      if(location.pathname.includes("/categoryProducts.html")){
+        localStorage.setItem("proId", x[i].getAttribute("id"));
+        location.href = "/productDet.html";
+      }
     });
   }
 }
@@ -169,7 +171,7 @@ async function addProduct() {
       },
     }).showToast();
     clear();
-    
+
     setTimeout(() => {
       location.pathname = "/index.html";
     }, 3000);
