@@ -89,7 +89,7 @@ function DisplayCatPro(products) {
   let x = document.querySelectorAll(".product");
 
   for (let i = 0; i < x.length; i++) {
-    if (location.pathname.includes("/categoryProducts.html")) {
+    if (location.pathname.includes("/categoryProducts.html") || location.pathname.includes("/anyProducts.html")) {
       x[i].addEventListener("click", () => {
         localStorage.setItem("proId", x[i].getAttribute("id"));
         location.href = "/productDet.html";
@@ -174,7 +174,7 @@ async function addProduct() {
     clear();
     if (location.pathname.includes("/addProduct.html")) {
       setTimeout(() => {
-        location.pathname = "/small-e-commerc/index.html";
+        location.pathname = "/index.html";
       }, 3000);
     }
   }
