@@ -49,7 +49,7 @@ async function GetAllProductsCat(category) {
   }
 }
 
-if (location.pathname == "/categoryProducts.html") {
+if (location.pathname.includes("/categoryProducts.html")) {
   GetAllProductsCat(localStorage.getItem("category"));
 }
 
