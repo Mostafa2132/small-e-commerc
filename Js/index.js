@@ -33,7 +33,7 @@ function DisplayAllCategories(categoryList) {
     if (location.pathname.includes("/index.html")) {
       allCatigre[i].addEventListener("click", () => {
         localStorage.setItem("category", allCatigre[i].innerText);
-        location.href = "/categoryProducts.html";
+        location.href = "./categoryProducts.html";
       });
     }
   }
@@ -102,7 +102,7 @@ async function allProducts() {
   try {
     let res = await fetch("https://dummyjson.com/products");
     let any = await res.json();
-    if (location.pathname.includes("/anyProducts.html")) {
+    if (location.pathname.includes("./anyProducts.html")) {
       DisplayCatPro(any.products);
     }
   } catch (error) {
@@ -172,9 +172,9 @@ async function addProduct() {
       },
     }).showToast();
     clear();
-    if (location.pathname.includes("/addProduct.html")) {
+    if (location.pathname.includes("./addProduct.html")) {
       setTimeout(() => {
-        location.pathname = "/index.html";
+        location.pathname = "./index.html";
       }, 3000);
     }
   }
