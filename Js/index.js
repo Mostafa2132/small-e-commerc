@@ -175,7 +175,7 @@ async function addProduct() {
     }).showToast();
     clear();
     setTimeout(function() {
-      location.pathname = "./index.html";
+      location.pathname = "/index.html";
     }, 3000);
   }
 }
