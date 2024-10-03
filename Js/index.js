@@ -93,7 +93,6 @@ function DisplayCatPro(products) {
       location.pathname.includes("/categoryProducts.html") ||
       location.pathname.includes("/anyProducts.html")
     ) {
-   
       x[i].addEventListener("click", () => {
         localStorage.setItem("proId", x[i].getAttribute("id"));
         location.href = "./productDet.html";
@@ -175,8 +174,8 @@ async function addProduct() {
       },
     }).showToast();
     clear();
-    setTimeout(()=> {
-      location.pathname = "/index.html"; 
+    setTimeout(() => {
+      location.pathname = "/index.html";
     }, 3000);
   }
 }
