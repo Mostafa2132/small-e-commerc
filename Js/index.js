@@ -51,7 +51,7 @@ async function GetAllProductsCat(category) {
   }
 }
 
-if (location.pathname.includes("/categoryProducts.html")) {
+if (location.pathname.includes("./categoryProducts.html")) {
   GetAllProductsCat(localStorage.getItem("category"));
 }
 
