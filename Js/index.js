@@ -30,7 +30,7 @@ function DisplayAllCategories(categoryList) {
   }
   let allCatigre = document.querySelectorAll(".category");
   for (let i = 0; i < allCatigre.length; i++) {
-    if (location.pathname.includes("/index.html")) {
+    if (location.pathname.includes("./index.html")) {
       allCatigre[i].addEventListener("click", () => {
         localStorage.setItem("category", allCatigre[i].innerText);
         location.href = "./categoryProducts.html";
@@ -172,7 +172,7 @@ async function addProduct() {
       },
     }).showToast();
     clear();
-    if (location.pathname.includes("./addProduct.html")) {
+    if (location.pathname.includes("/addProduct.html")) {
       setTimeout(() => {
         location.pathname = "./index.html";
       }, 3000);
