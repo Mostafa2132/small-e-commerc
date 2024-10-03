@@ -91,10 +91,8 @@ function DisplayCatPro(products) {
   for (let i = 0; i < x.length; i++) {
     if (location.pathname.includes("/categoryProducts.html") || location.pathname.includes("/anyProducts.html")) {
       x[i].addEventListener("click", () => {
-        console.log(x[i]);
-        
         localStorage.setItem("proId", x[i].getAttribute("id"));
-        location.href = "/productDet.html";
+        location.href = "./productDet.html";
       });
     }
   }
