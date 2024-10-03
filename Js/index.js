@@ -33,7 +33,7 @@ function DisplayAllCategories(categoryList) {
     if (location.pathname.includes("/index.html")) {         ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! tmam
       allCatigre[i].addEventListener("click", () => {
         localStorage.setItem("category", allCatigre[i].innerText);
-        location.href = "/categoryProducts.html";            ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! +  
+        location.href = "../categoryProducts.html";            ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! +  
       });
     }
   }
