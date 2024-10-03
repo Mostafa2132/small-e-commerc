@@ -172,18 +172,14 @@ async function addProduct() {
       },
     }).showToast();
     clear();
-          ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-   
-          if(location.pathname == "/addProduct.html"){
+          ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    
             setTimeout(() => {
               location.pathname = "/index.html";                        ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             }, 3000);
-          }
-    
   }
 }
 
-if (location.pathname.includes("/addProduct.html")) {              ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+if (location.pathname.includes("./addProduct.html")) {              ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   btn.addEventListener("click", () => {
     addProduct();
   });
