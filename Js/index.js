@@ -30,10 +30,10 @@ function DisplayAllCategories(categoryList) {
   }
   let allCatigre = document.querySelectorAll(".category");
   for (let i = 0; i < allCatigre.length; i++) {
-    if (location.pathname.includes("/index.html")) {
+    if (location.pathname.includes("/index.html")) {         ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       allCatigre[i].addEventListener("click", () => {
         localStorage.setItem("category", allCatigre[i].innerText);
-        location.href = "./categoryProducts.html";
+        location.href = "./categoryProducts.html";            ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       });
     }
   }
@@ -51,7 +51,7 @@ async function GetAllProductsCat(category) {
   }
 }
 
-if (location.pathname.includes("./categoryProducts.html")) {
+if (location.pathname.includes("./categoryProducts.html")) {              ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   GetAllProductsCat(localStorage.getItem("category"));
 }
 
@@ -89,7 +89,7 @@ function DisplayCatPro(products) {
   let x = document.querySelectorAll(".product");
 
   for (let i = 0; i < x.length; i++) {
-    if (location.pathname.includes("/categoryProducts.html") || location.pathname.includes("/anyProducts.html")) {
+    if (location.pathname.includes("./categoryProducts.html") || location.pathname.includes("/anyProducts.html")) {       ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       x[i].addEventListener("click", () => {
         localStorage.setItem("proId", x[i].getAttribute("id"));
         location.href = "/productDet.html";
@@ -102,7 +102,7 @@ async function allProducts() {
   try {
     let res = await fetch("https://dummyjson.com/products");
     let any = await res.json();
-    if (location.pathname.includes("/anyProducts.html")) {
+    if (location.pathname.includes("/anyProducts.html")) {          ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       DisplayCatPro(any.products);
     }
   } catch (error) {
@@ -172,15 +172,15 @@ async function addProduct() {
       },
     }).showToast();
     clear();
-    if (location.pathname.includes("/addProduct.html")) {
+    if (location.pathname.includes("/addProduct.html")) {       ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       setTimeout(() => {
-        location.pathname = "/index.html";
+        location.pathname = "/index.html";                        ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       }, 3000);
     }
   }
 }
 
-if (location.pathname.includes("/addProduct.html")) {
+if (location.pathname.includes("/addProduct.html")) {              ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   btn.addEventListener("click", () => {
     addProduct();
   });
