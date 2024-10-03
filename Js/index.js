@@ -182,11 +182,11 @@ async function addProduct() {
   }
 }
 
-// if (location.pathname.includes("/addProduct.html")) {
+if (location.pathname.includes("/addProduct.html")) {
   btn.addEventListener("click", () => {
     addProduct();
   });
-// }
+}
 
 function checkInputs() {
   if (
