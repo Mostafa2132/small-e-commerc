@@ -172,11 +172,11 @@ async function addProduct() {
       },
     }).showToast();
     clear();
-    if (location.pathname.includes("/addProduct.html")) {       ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+          ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       setTimeout(() => {
         location.pathname = "/index.html";                        ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       }, 3000);
-    }
+    
   }
 }
 
