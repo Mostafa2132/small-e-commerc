@@ -140,7 +140,7 @@ function DisplayselectedPro(pro) {
                        <h5 class="fs-3 my-5">Brand : <span class="text-muted">${pro.brand} </span></h5>
                        <h5 class="fs-3 my-5">Category : <span class="text-muted">${pro.category} </span></h5>
                        <h5 class="fs-3 my-5">Return Policy : <span class="text-muted">${pro.returnPolicy} </span></h5>
-                       <h5 class="text-danger fs-3">Discount : <span >${pro.discountPercentage} % </span></h5>
+                       <h5 class="text-danger fs-3"> Discount : <span >${pro.discountPercentage} % </span></h5>
                        <button type="button" class="btn w-100 btn-outline-success my-2">Add to Cart</button>
                      </div>
                    </div>
