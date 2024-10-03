@@ -3,6 +3,17 @@ let price = document.querySelector("#price");
 let des = document.querySelector("#des");
 let cat = document.querySelector("#cat");
 let btn = document.querySelector("#btn");
+let shopBtn = document.querySelector("#shopBtn");
+
+
+
+if(shopBtn){
+  shopBtn.addEventListener("click",() => {
+    window.scrollTo(0,610)
+    
+})
+}
+
 
 //
 async function GetAllCategories() {
@@ -153,30 +164,36 @@ function DisplayselectedPro(pro) {
 }
 
 async function addProduct() {
-  if (checkInputs()) {
-    let product = {
-      title: name.value,
-      price: price.value,
-      category: cat.value,
-      description: des.value,
-    };
-    let res = await fetch("https://dummyjson.com/products/add", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(product),
-    });
-    Toastify({
-      text: "Product added successfully",
-      duration: 3000,
-      gravity: "bottom",
-      style: {
-        background: "#96c93d",
-      },
-    }).showToast();
-    clear();
-    setTimeout(function() {
-      location.pathname = "/index.html";
-    }, 3000);
+  if(validate(name) && validate(price) && validate(cat) && validate(des)){
+    if (checkInputs()) {
+      let product = {
+        title: name.value,
+        price: price.value,
+        category: cat.value,
+        description: des.value,
+      };
+      let res = await fetch("https://dummyjson.com/products/add", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(product),
+      });
+      Toastify({
+        text: "Product added successfully",
+        duration: 3000,
+        gravity: "bottom",
+        style: {
+          background: "#96c93d",
+        },
+      }).showToast();
+      clear();
+      setTimeout(function() {
+        location.pathname = "/index.html";
+      }, 3000);
+    }
+    name.classList.remove("is-valid");
+    price.classList.remove("is-valid");
+    cat.classList.remove("is-valid");
+    des.classList.remove("is-valid");
   }
 }
 
@@ -206,4 +223,22 @@ function clear() {
   price.value = "";
   cat.value = "";
   des.value = "";
+}
+
+
+function validate(ele) {
+  let regx = {
+    name : /^\w{3,8}( )?([a-z]{3,8}|[1-9]{2,4})?$/gm,
+    price : /^[1-9][0-9]{3,8}$/gm,
+    cat : /^.{3,12}$/gm,
+    des : /^.{3,12}$/gm,
+  }
+  if(regx[ele.id].test(ele.value)){
+    ele.classList.add("is-valid");
+    ele.classList.remove("is-invalid");
+    return true;
+  }else{
+    ele.classList.add("is-invalid");
+    ele.classList.remove("is-valid");
+  }
 }
