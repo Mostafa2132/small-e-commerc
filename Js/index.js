@@ -30,10 +30,10 @@ function DisplayAllCategories(categoryList) {
   }
   let allCatigre = document.querySelectorAll(".category");
   for (let i = 0; i < allCatigre.length; i++) {
-    if (location.pathname.includes("/index.html")) {         ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! tmam
+    if (location.pathname.includes("./index.html")) {         ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! tmam
       allCatigre[i].addEventListener("click", () => {
         localStorage.setItem("category", allCatigre[i].innerText);
-        location.href = "./categoryProducts.html";            ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! + tmam 
+        location.href = "/categoryProducts.html";            ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! + tmam 
       });
     }
   }
@@ -89,10 +89,10 @@ function DisplayCatPro(products) {
   let x = document.querySelectorAll(".product");
 
   for (let i = 0; i < x.length; i++) {
-    if (location.pathname.includes("./categoryProducts.html") || location.pathname.includes("./anyProducts.html")) {       ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    if (location.pathname.includes("/categoryProducts.html") || location.pathname.includes("/anyProducts.html")) {        ////!   tmam     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       x[i].addEventListener("click", () => {
         localStorage.setItem("proId", x[i].getAttribute("id"));
-        location.href = "/productDet.html";
+        location.href = "./productDet.html";
       });
     }
   }
@@ -174,7 +174,7 @@ async function addProduct() {
     clear();
     if (location.pathname.includes("/addProduct.html")) {       ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       setTimeout(() => {
-        location.pathname = "/index.html";                        ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        location.pathname = "./index.html";                        ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       }, 3000);
     }
   }
