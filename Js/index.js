@@ -51,7 +51,7 @@ async function GetAllProductsCat(category) {
   }
 }
 
-if (location.pathname.includes("/categoryProducts.html")) {              ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+if (location.pathname.includes("./categoryProducts.html")) {              ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
   GetAllProductsCat(localStorage.getItem("category"));
 }
 
@@ -92,7 +92,7 @@ function DisplayCatPro(products) {
     if (location.pathname.includes("./categoryProducts.html") || location.pathname.includes("/anyProducts.html")) {       ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       x[i].addEventListener("click", () => {
         localStorage.setItem("proId", x[i].getAttribute("id"));
-        location.href = "/productDet.html";
+        location.href = "./productDet.html";
       });
     }
   }
