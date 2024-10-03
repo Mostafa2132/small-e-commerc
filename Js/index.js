@@ -93,7 +93,7 @@ function DisplayCatPro(products) {
       location.pathname.includes("/categoryProducts.html") ||
       location.pathname.includes("/anyProducts.html")
     ) {
-      ////!   tmam     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+   
       x[i].addEventListener("click", () => {
         localStorage.setItem("proId", x[i].getAttribute("id"));
         location.href = "./productDet.html";
@@ -107,7 +107,6 @@ async function allProducts() {
     let res = await fetch("https://dummyjson.com/products");
     let any = await res.json();
     if (location.pathname.includes("/anyProducts.html")) {
-      ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       DisplayCatPro(any.products);
     }
   } catch (error) {
@@ -177,7 +176,7 @@ async function addProduct() {
     }).showToast();
     clear();
     setTimeout(()=> {
-      location.pathname = "/index.html"; 
+      location.pathname = "./index.html"; 
     }, 3000);
   }
 }
