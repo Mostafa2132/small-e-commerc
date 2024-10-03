@@ -174,7 +174,7 @@ async function addProduct() {
     clear();
     if (location.pathname.includes("/addProduct.html")) {       ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       setTimeout(() => {
-        location.pathname = "./index.html";                        ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        location.pathname = "/index.html";                        ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       }, 3000);
     }
   }
