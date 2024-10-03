@@ -30,7 +30,7 @@ function DisplayAllCategories(categoryList) {
   }
   let allCatigre = document.querySelectorAll(".category");
   for (let i = 0; i < allCatigre.length; i++) {
-    if (location.pathname.includes("/index.html")) {
+    if (location.pathname.includes("./index.html")) {
       allCatigre[i].addEventListener("click", () => {
         localStorage.setItem("category", allCatigre[i].innerText);
         location.href = "/categoryProducts.html";
@@ -89,10 +89,10 @@ function DisplayCatPro(products) {
   let x = document.querySelectorAll(".product");
 
   for (let i = 0; i < x.length; i++) {
-    if (location.pathname.includes("./categoryProducts.html") || location.pathname.includes("./anyProducts.html")) {
+    if (location.pathname.includes("/categoryProducts.html") || location.pathname.includes("/anyProducts.html")) {
       x[i].addEventListener("click", () => {
         localStorage.setItem("proId", x[i].getAttribute("id"));
-        location.href = "/productDet.html";
+        location.href = "./productDet.html";
       });
     }
   }
