@@ -177,7 +177,7 @@ async function addProduct() {
     }).showToast();
     clear();
     setTimeout(() => {
-      location.pathname = "/index.html"; ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      location.pathname = "./index.html"; 
     }, 3000);
   }
 }
