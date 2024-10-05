@@ -4,7 +4,15 @@ let des = document.querySelector("#des");
 let cat = document.querySelector("#cat");
 let btn = document.querySelector("#btn");
 let shopBtn = document.querySelector("#shopBtn");
+let navLinks = document.querySelectorAll(".nav-link");
 
+// for (let i = 0; i < navLinks.length; i++) {
+//   navLinks[i].addEventListener("click",(e)=>{
+//     e.target.classList.toggle("active");
+
+//   })
+  
+// }
 
 
 if(shopBtn){
@@ -187,7 +195,7 @@ async function addProduct() {
       }).showToast();
       clear();
       setTimeout(function() {
-        location.pathname = "/index.html";
+        location.pathname = "./index.html";
       }, 3000);
     }
     name.classList.remove("is-valid");
@@ -242,3 +250,13 @@ function validate(ele) {
     ele.classList.remove("is-valid");
   }
 }
+
+
+
+// loading screen
+
+$(document).ready(function() {
+  $(".landingPage").fadeOut(2000, function(){
+    $("body").css("overflow", "visible")
+  })
+})
